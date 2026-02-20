@@ -1,8 +1,14 @@
 import { defineConfig } from "orval";
+import { loadEnv } from "vite";
 
-const API_SWAGGER_URL =
-	process.env.VITE_API_SWAGGER_URL ||
-	"http://127.0.0.1:3658/export/openapi/1146445/1735?moduleId=998748";
+const env = loadEnv(process.env.MODE ?? "development", process.cwd(), "");
+const API_SWAGGER_URL = env.VITE_API_SWAGGER_URL ?? "";
+
+if (!API_SWAGGER_URL) {
+	throw new Error(
+		"VITE_API_SWAGGER_URL não está definida. Configure no .env ou .env.local",
+	);
+}
 
 export default defineConfig({
 	api: {
