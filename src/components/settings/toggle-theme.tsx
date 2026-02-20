@@ -13,9 +13,9 @@ const items: {
 	label: string;
 	image: string;
 }[] = [
-	{ value: "light", label: "Claro", image: "https://placehold.co/88x70/f8fafc/64748b?text=Light" },
-	{ value: "dark", label: "Escuro", image: "https://placehold.co/88x70/1e293b/94a3b8?text=Dark" },
-	{ value: "system", label: "Sistema", image: "https://placehold.co/88x70/e2e8f0/475569?text=Auto" },
+	{ value: "light", label: "Claro", image: "/ui-light.png" },
+	{ value: "dark", label: "Escuro", image: "/ui-dark.png" },
+	{ value: "system", label: "Sistema", image: "/ui-system.png" },
 ];
 
 export function ToggleTheme() {
